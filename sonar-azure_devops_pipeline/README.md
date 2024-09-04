@@ -21,7 +21,9 @@ Step 3:
 Setup reverse proxy ,certbot and DNS
 
 - sudo apt install nginx -y
+  
 - sudo nano /etc/nginx/sites-available/default  and add nginx file:
+  
 '''yaml
 server {
        listen [::]:80;
@@ -38,6 +40,7 @@ server {
 
 
 '''
+
 We need to map the subdomain name with our DNS now(we are using route 53)
 Find your server IP by: 
 curl ifconfig.me (copy the IP) and Goto route53 console
@@ -51,7 +54,9 @@ Now lets install install certbot for free certificate installation on subdomain
 
 RUN :
 sudo apt-get install certbot -y &&  sudo apt-get install python3-certbot-nginx -y
+
 After the installation ,configure Certificate 
+
 RUN : sudo certficate and complete the asked queries
 
 ![image](https://github.com/user-attachments/assets/5264fdfb-8ad6-4974-83d3-0112413b80a8)
@@ -64,9 +69,9 @@ Lets access sonarqube on subdomain
 ![image](https://github.com/user-attachments/assets/609cc985-6b17-4bc5-9642-36f365c58df5)
 
 Intially the username and password will be
-admin
-admin
-Then change the password
+
+admin and admin
+(Then change the password accordingly)
 
 We have Configured sonarqube !!
 
