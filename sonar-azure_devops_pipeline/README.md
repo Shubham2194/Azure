@@ -6,9 +6,9 @@ Create a VM and configure SOnarqube as Docker container
 
 ssh to the VM
 mkdir sonarqube && nano deploy-sonar.sh
-'''sh
-#!/bin/bash
 
+''' sh
+#!/bin/bash
 docker run -itd --name sonar-devops -p 9000:9000 sonarqube:lts-community
 '''
 
@@ -24,7 +24,7 @@ Setup reverse proxy ,certbot and DNS
   
 - sudo nano /etc/nginx/sites-available/default  and add nginx file:
   
-'''yaml
+''' yaml
 server {
        listen [::]:80;
        server_name xyz.subdomain.com;
