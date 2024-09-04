@@ -1,6 +1,11 @@
 #Lets integrate Sonar Qube with Report plugin With Azure-devOps
 
 
+
+![image](https://github.com/user-attachments/assets/8c558fa0-8320-46e2-b9b9-08501150c4b7)
+
+
+
 Step1 :
 Create a VM and configure SOnarqube as Docker container 
 
@@ -40,8 +45,10 @@ server {
 ```
 
 We need to map the subdomain name with our DNS now(we are using route 53)
+
 Find your server IP by: 
 curl ifconfig.me (copy the IP) and Goto route53 console
+
 Create an A record and add Subdomain name and IP in value
 
 
