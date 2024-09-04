@@ -7,10 +7,10 @@ Create a VM and configure SOnarqube as Docker container
 ssh to the VM
 mkdir sonarqube && nano deploy-sonar.sh
 
-''' sh
+``` sh
 #!/bin/bash
 docker run -itd --name sonar-devops -p 9000:9000 sonarqube:lts-community
-'''
+```
 
 Step2 :  Check if its running
 docker ps
@@ -24,10 +24,10 @@ Setup reverse proxy ,certbot and DNS
   
 - sudo nano /etc/nginx/sites-available/default  and add nginx file:
   
-''' yaml
+```yaml
 server {
-       listen [::]:80;
-       server_name xyz.subdomain.com;
+    listen [::]:80;
+    server_name xyz.subdomain.com;
 
     location / {
         proxy_pass http://localhost:9000;
@@ -36,7 +36,8 @@ server {
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
     }
-} '''
+}
+```
 
 We need to map the subdomain name with our DNS now(we are using route 53)
 Find your server IP by: 
