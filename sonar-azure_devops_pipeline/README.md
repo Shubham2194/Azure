@@ -1,4 +1,4 @@
-#Lets integrate Sonar Qube with Report plugin With Azure-devOps
+#Lets integrate SonarQube + CNES Report plugin with Azure devOps
 
 
 
@@ -88,10 +88,16 @@ Go to azure devops console
 
 Marketplace > browse marketplace
 
+Search for sonar and install it for free and choose you organistaion where you want to configure Sonar plugin
+
+
 ![image](https://github.com/user-attachments/assets/390df439-ef74-4633-9ffd-60fba34d6229)
 
 
-Search for sonar and install it for free and choose you organistaion where you want to configure Sonar plugin
+Step 6:
+Configure sonar in azure pipeline
+
+
 
 ![image](https://github.com/user-attachments/assets/8a9d1ef7-240c-47b3-aabf-d2ce7e973424)
 
