@@ -86,7 +86,7 @@ Install sonarqube plugin on azure devops
 
 Go to azure devops console 
 
-Marketplace > browse marketplace
+Marketplace > browse marketplace and get it for free
 
 Search for sonar and install it for free and choose you organistaion where you want to configure Sonar plugin
 
@@ -100,4 +100,36 @@ Configure sonar in azure pipeline
 
 
 ![image](https://github.com/user-attachments/assets/8a9d1ef7-240c-47b3-aabf-d2ce7e973424)
+
+
+Ste 7:
+Lets configure CNES plugin in sonarqube (Makes handy to create sonarqube 
+
+Go to https://github.com/cnescatlab/sonar-cnes-report and Hit releases 
+
+![image](https://github.com/user-attachments/assets/33c286c2-3abe-4f95-9b01-45bdec3f4c6a)
+
+Scrool to specific version 4.1.2 and copy link address
+
+Step 8:
+Exec to the sonar docker container and install the plugin
+
+SSh to the VM
+RUN docker exec -it 96e7d6adc466 bash
+cd extensions/plugins
+
+wget https://github.com/cnescatlab/sonar-cnes-report/releases/download/4.1.2/sonar-cnes-report-4.1.2.jar
+
+![image](https://github.com/user-attachments/assets/2103457a-b671-4cd1-9be3-5d32c67b2696)
+
+This will download the CNES plugin
+
+Step 9:
+Add the pugin in SonarUI
+
+Access ui and do the following:
+Administration > system and restart sonarqube
+
+Step 10:
+Added sonarqube job in the azure pipeline yml
 
