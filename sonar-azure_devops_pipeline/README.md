@@ -133,3 +133,4 @@ Administration > system and restart sonarqube
 Step 10:
 Added sonarqube job in the azure pipeline yml
 
+
