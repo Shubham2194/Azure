@@ -133,4 +133,40 @@ Administration > system and restart sonarqube
 Step 10:
 Added sonarqube job in the azure pipeline yml
 
+Click on show assistant in the right side and search for sonarqube and click prepare analysis configuration
+
+![image](https://github.com/user-attachments/assets/9f98895b-f2d8-4395-9a61-a0cc430d7ab1)
+
+(adjust accoring to you)
+```yml
+- task: SonarQubePrepare@6
+  inputs:
+    SonarQube: 'sonar-PAT'
+    scannerMode: 'CLI'
+    cliVersion: '9.96'
+    configMode: 'manual'
+    cliProjectKey: 'Prod-core'
+    cliProjectName: 'Prod-core'
+    cliSources: '.'
+    extraProperties: |
+      # Additional properties that will be passed to the scanner, 
+      # Put one key=value per line, example:
+      # sonar.exclusions=**/*.bin
+      sonar.java.binaries=.
+ ```
+Step 11: 
+search for sonarqube again and  click on Run code analysis and publish quality gate result one by one.
+
+```yml
+- task: SonarQubeAnalyze@6
+  inputs:
+    jdkversion: 'JAVA_HOME_17_X64'
+- task: SonarQubePublish@6
+  inputs:
+    pollingTimeoutSec: '300'
+```
+
+
+
+
 
